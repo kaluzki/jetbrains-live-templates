@@ -1,4 +1,4 @@
-<templateSet group="PHP:Member access">
+<templateSet group="PHP: Member access">
   <template name="." value="-&gt;$C1$" description="." toReformat="false" toShortenFQNames="true">
     <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
     <context>
