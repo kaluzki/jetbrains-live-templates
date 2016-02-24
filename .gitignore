@@ -1,3 +1,10 @@
-*
+/*
+
+!.gitignore
 !README.md
+
 !jblt-*
+
+!composer.json
+!console
+!src/

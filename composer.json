@@ -1,0 +1,22 @@
+{
+    "name": "kaluzki/jetbrains-live-templates",
+    "description": "Live templates for JetBrains editors",
+    "homepage": "https://github.com/kaluzki/jetbrains-live-templates",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Demjan Kaluzki",
+            "email": "kaluzkidemjan@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^2.8"
+    },
+    "require-dev": {
+        "phpunit/PHPUnit": "^3.7"
+    },
+    "autoload": {
+        "psr-4": { "Jblt\\": "src/Jblt" }
+    }
+}
