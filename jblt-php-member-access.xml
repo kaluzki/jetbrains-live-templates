@@ -1,0 +1,319 @@
+<templateSet group="PHP:Member access">
+  <template name="." value="-&gt;$C1$" description="." toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name=".." value="-&gt;$C1$-&gt;$C2$" description=".." toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="n" value="new $COMPLETE$" description="new CLASS" toReformat="false" toShortenFQNames="true">
+    <variable name="COMPLETE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="SQL" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="t" value="$this-&gt;$COMPLETE$" description="$this-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="COMPLETE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="SQL" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="s" value="self::$COMPLETE$" description="self::" toReformat="false" toShortenFQNames="true">
+    <variable name="COMPLETE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="SQL" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="o." value="$$o$C1$-&gt;$C2$" description="$o-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="a." value="$$a$C1$-&gt;$C2$" description="$a-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="b." value="$$b$C1$-&gt;$C2$" description="$b-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="c." value="$$c$C1$-&gt;$C2$" description="$c-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="d." value="$$d$C1$-&gt;$C2$" description="$d-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="e." value="$$e$C1$-&gt;$C2$" description="$e-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="f." value="$$f$C1$-&gt;$C2$" description="$f-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="g." value="$$g$C1$-&gt;$C2$" description="$g-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="h." value="$$h$C1$-&gt;$C2$" description="$h-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="i." value="$$i$C1$-&gt;$C2$" description="$i-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="j." value="$$j$C1$-&gt;$C2$" description="$j-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="k." value="$$k$C1$-&gt;$C2$" description="$k-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="l." value="$$l$C1$-&gt;$C2$" description="$l-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="m." value="$$m$C1$-&gt;$C2$" description="$m-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="p." value="$$p$C1$-&gt;$C2$" description="$p-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="q." value="$$q$C1$-&gt;$C2$" description="$q-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="r." value="$$r$C1$-&gt;$C2$" description="$r-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="s." value="$$s$C1$-&gt;$C2$" description="$s-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="t." value="$$t$C1$-&gt;$C2$" description="$t-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="$." value="$$$C1$-&gt;$C2$" description="$-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="u." value="$$u$C1$-&gt;$C2$" description="$u-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="v." value="$$v$C1$-&gt;$C2$" description="$v-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="w." value="$$w$C1$-&gt;$C2$" description="$w-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="x." value="$$x$C1$-&gt;$C2$" description="$x-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="y." value="$$y$C1$-&gt;$C2$" description="$y-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="z." value="$$z$C1$-&gt;$C2$" description="$z-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+</templateSet>

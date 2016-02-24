@@ -1,0 +1,189 @@
+<templateSet group="PHP: iwat">
+  <template name="vs" value="$VAR$-&gt;$FIELD$-&gt;set($VALUE$);&#10;$END$" description="$values-&gt;FIELD()-&gt;set($value)" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;$values&quot;" alwaysStopAt="false" />
+    <variable name="FIELD" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="vsk" value="$VAR$-&gt;$FIELD$-&gt;setKey($VALUE$);&#10;$END$" description="$values-&gt;FIELD()-&gt;setKey($value)" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;$values&quot;" alwaysStopAt="false" />
+    <variable name="FIELD" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="fn=" value="$$names = FieldNames::$NAME$$COMPLETE$;&#10;$END$" description="$names = FieldNames::$class();" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="true" />
+    <variable name="COMPLETE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="SQL" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="vg" value="$VAR$-&gt;$FIELD$-&gt;get()$END$" description="$values-&gt;FIELD()-&gt;get()" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;$values&quot;" alwaysStopAt="false" />
+    <variable name="FIELD" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="nc" value="new Custom$COMPLETE$" description="new Custom_" toReformat="false" toShortenFQNames="true">
+    <variable name="COMPLETE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="SQL" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="ni" value="new iwat$COMPLETE$" description="new iwat_" toReformat="false" toShortenFQNames="true">
+    <variable name="COMPLETE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="SQL" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="fi" value="$obj$-&gt;getFieldInfo($SELECTION$, true)$END$" description="$obj-&gt;getFieldInfo($name, true)" toReformat="true" toShortenFQNames="true">
+    <variable name="obj" expression="" defaultValue="&quot;$obj&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="SQL" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="fn" value="FieldNames::$NAME$$COMPLETE$" description="FieldNames::$class()" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="true" />
+    <variable name="COMPLETE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="SQL" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="vgk" value="$VAR$-&gt;$FIELD$-&gt;getKey()$END$" description="$values-&gt;FIELD()-&gt;getKey()" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;$values&quot;" alwaysStopAt="false" />
+    <variable name="FIELD" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="v" value="$VAR$-&gt;$FIELD$-&gt;$COMPLETE$$END$" description="$values-&gt;FIELD()-&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;$values&quot;" alwaysStopAt="false" />
+    <variable name="FIELD" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="COMPLETE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="vc" value="$VAR$-&gt;$FIELD$-&gt;clear()$END$" description="$values-&gt;FIELD()-&gt;clear()" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;$values&quot;" alwaysStopAt="false" />
+    <variable name="FIELD" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="ve" value="$VAR$-&gt;$FIELD$-&gt;isEmpty()$END$" description="$values-&gt;FIELD()-&gt;isEmpty()" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;$values&quot;" alwaysStopAt="false" />
+    <variable name="FIELD" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="vr" value="$VAR$-&gt;$FIELD$-&gt;isReadable()$END$" description="$values-&gt;FIELD()-&gt;isReadable()" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;$values&quot;" alwaysStopAt="false" />
+    <variable name="FIELD" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="vw" value="$VAR$-&gt;$FIELD$-&gt;isWritable()$END$" description="$values-&gt;FIELD()-&gt;isWritable()" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;$values&quot;" alwaysStopAt="false" />
+    <variable name="FIELD" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+</templateSet>
