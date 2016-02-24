@@ -1,11 +1,16 @@
 #!/usr/bin/env php
 <?php
+/**
+ * (c) Demjan Kaluzki <kaluzkidemjan@gmail.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 require __DIR__.'/vendor/autoload.php';
 
-use Jblt\Console\Command\XmlToMd;
-use Symfony\Component\Console\Application;
-
-$application = new Application();
-$application->add(new XmlToMd());
-$application->run();
+$app = new Symfony\Component\Console\Application();
+$app->addCommands([
+    new Jblt\Console\Command\XmlToMd()
+]);
+$app->run();
