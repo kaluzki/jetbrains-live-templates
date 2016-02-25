@@ -8,6 +8,7 @@
 
 namespace kaluzki\JetBrains\LiveTemplate\Console\Command;
 
+use kaluzki\JetBrains\LiveTemplate\Model\XmlStore;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -15,7 +16,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  */
-class XmlToMd extends Command
+class Convert extends Command
 {
     /**
      * @inheritdoc
@@ -23,8 +24,8 @@ class XmlToMd extends Command
     protected function configure()
     {
         $this
-            ->setName('jblt:tomd')
-            ->setDescription('Convert xml to md format')
+            ->setName('jblt:convert')
+            ->setDescription('Convert xml to another format (json|md)')
             ->addArgument('FILE', InputArgument::OPTIONAL | InputArgument::IS_ARRAY, 'file pattern', ['jblt-*.xml'])
         ;
     }
@@ -39,6 +40,11 @@ class XmlToMd extends Command
             $files = array_merge($files, glob($pattern));
         }
 
-        $output->writeln(json_encode(array_unique($files)));
+        array_map(function($file) use($output) {
+            $output->writeln($file);
+            $store = new XmlStore(simplexml_load_file($file));
+            $output->writeln(json_encode($store->getIterator()));
+            $output->writeln('');
+        }, array_unique($files));
     }
 }

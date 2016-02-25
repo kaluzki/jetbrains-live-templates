@@ -8,3 +8,4 @@
 !composer.json
 !console
 !src/
+!phpunit.xml.dist

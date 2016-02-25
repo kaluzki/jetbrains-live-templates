@@ -17,6 +17,8 @@
         "phpunit/PHPUnit": "^3.7"
     },
     "autoload": {
-        "psr-4": { "kaluzki\\JetBrains\\LiveTemplate\\": "src/JetBrains/LiveTemplate" }
+        "psr-4": {
+            "kaluzki\\JetBrains\\": "src/JetBrains"
+        }
     }
 }
