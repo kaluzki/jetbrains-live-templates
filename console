@@ -11,6 +11,6 @@ require __DIR__.'/vendor/autoload.php';
 
 $app = new Symfony\Component\Console\Application();
 $app->addCommands([
-    new Jblt\Console\Command\XmlToMd()
+    new kaluzki\Jblt\Console\Command\XmlToMd()
 ]);
 $app->run();

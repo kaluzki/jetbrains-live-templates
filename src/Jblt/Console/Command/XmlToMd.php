@@ -6,7 +6,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Jblt\Console\Command;
+namespace kaluzki\Jblt\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
