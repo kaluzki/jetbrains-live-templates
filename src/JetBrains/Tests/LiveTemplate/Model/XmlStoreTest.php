@@ -30,7 +30,7 @@ class XmlStoreTest extends \PHPUnit_Framework_TestCase
       <option name="OTHER" value="true" />
     </context>
   </template>
-  <template name="t2-name" value="t2-value" description="t2-description" toReformat="true" toShortenFQNames="false">
+  <template name="t2-name" value="\$v1$&#10;&gt;\$v2$&lt;\$v3$&amp;\$v4$" description="t2-description" toReformat="true" toShortenFQNames="false">
     <variable />
     <variable name="v2" />
     <variable name="v3" expression="exp" defaultValue="default" />
@@ -57,11 +57,12 @@ XML;
                             ContextEnum::PHP,
                             ContextEnum::OTHER
                         ],
+                        'shortcut'         => '',
                     ],
                     [
                         'name'             => 't2-name',
                         'description'      => 't2-description',
-                        'value'            => 't2-value',
+                        'value'            => "\$v1$\n>\$v2$<\$v3$&\$v4$",
                         'toReformat'       => true,
                         'toShortenFQNames' => false,
                         'variables'        => [
@@ -91,6 +92,7 @@ XML;
                             ],
                         ],
                         'context'          => [],
+                        'shortcut'         => '',
                     ],
                 ]],
                 'xml'      => $integration
