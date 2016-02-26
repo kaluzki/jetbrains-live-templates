@@ -40,7 +40,7 @@ class XmlStore implements IteratorAggregate
     public function getIterator()
     {
         if (!$this->templateSet) {
-            $this->templateSet = $this->_toTemplateSet($this->xml);
+            $this->templateSet = $this->toTemplateSet($this->xml);
         }
         return $this->templateSet;
     }
@@ -50,11 +50,11 @@ class XmlStore implements IteratorAggregate
      *
      * @return TemplateSet
      */
-    private function _toTemplateSet(SimpleXMLElement $xml)
+    protected function toTemplateSet(SimpleXMLElement $xml)
     {
         return new TemplateSet([
-            'group'     => (string)$this->xml['group'],
-            'templates' => array_map([$this, '_toTemplate'], $xml->xpath('/templateSet/template'))
+            'group'     => $this->attribute($xml, 'group'),
+            'templates' => array_map([$this, 'toTemplate'], $xml->xpath('/templateSet/template'))
         ]);
     }
 
@@ -63,16 +63,17 @@ class XmlStore implements IteratorAggregate
      *
      * @return Template
      */
-    private function _toTemplate(SimpleXMLElement $xml)
+    protected function toTemplate(SimpleXMLElement $xml)
     {
         return new Template([
-            'name'             => (string)$xml['name'],
-            'description'      => (string)$xml['description'],
-            'value'            => (string)$xml['value'],
-            'toReformat'       => (string)$xml['toReformat'] == 'true',
-            'toShortenFQNames' => (string)$xml['toShortenFQNames'] != 'false',
-            'variables'        => array_map([$this, '_toVariable'], $xml->xpath('variable')),
-            'context'          => $this->_toContext($xml->context),
+            'name'             => $this->attribute($xml, 'name'),
+            'description'      => $this->attribute($xml, 'description'),
+            'value'            => $this->attribute($xml, 'value'),
+            'toReformat'       => $this->attribute($xml, 'toReformat') == 'true',
+            'toShortenFQNames' => $this->attribute($xml, 'toShortenFQNames') != 'false',
+            'variables'        => array_map([$this, 'toVariable'], $xml->xpath('variable')),
+            'context'          => $this->toContext($xml->context),
+            'shortcut'         => $this->attribute($xml, 'shortcut'),
         ]);
     }
 
@@ -81,13 +82,13 @@ class XmlStore implements IteratorAggregate
      *
      * @return Variable
      */
-    private function _toVariable(SimpleXMLElement $xml)
+    protected function toVariable(SimpleXMLElement $xml)
     {
         return new Variable([
-            'name'         => (string)$xml['name'],
-            'expression'   => (string)$xml['expression'],
-            'defaultValue' => (string)$xml['defaultValue'],
-            'alwaysStopAt' => (string)$xml['alwaysStopAt'] != 'false',
+            'name'         => $this->attribute($xml, 'name'),
+            'expression'   => $this->attribute($xml, 'expression'),
+            'defaultValue' => $this->attribute($xml, 'defaultValue'),
+            'alwaysStopAt' => $this->attribute($xml, 'alwaysStopAt') != 'false',
         ]);
     }
 
@@ -96,14 +97,27 @@ class XmlStore implements IteratorAggregate
      *
      * @return string[]
      */
-    private function _toContext(SimpleXMLElement $xml)
+    protected function toContext(SimpleXMLElement $xml)
     {
         $context = [];
         foreach ($xml->xpath('option') as $option) {
-            if ((string)$option['value'] == 'true' && constant(__NAMESPACE__ . "\\ContextEnum::{$option['name']}")) {
-                $context[] = (string)$option['name'];
+            $constant = __NAMESPACE__ . "\\ContextEnum::{$option['name']}";
+            if ($this->attribute($option, 'value') == 'true' && constant($constant)) {
+                $context[] = $this->attribute($option, 'name');
             }
         }
         return array_unique($context);
+    }
+
+
+    /**
+     * @param SimpleXMLElement $xml
+     * @param string           $name
+     *
+     * @return string
+     */
+    protected function attribute(SimpleXMLElement $xml, $name)
+    {
+        return html_entity_decode((string)$xml[$name]);
     }
 }
