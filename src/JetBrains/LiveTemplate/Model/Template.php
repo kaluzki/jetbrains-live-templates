@@ -16,6 +16,7 @@ namespace kaluzki\JetBrains\LiveTemplate\Model;
  * @property-read bool       $toShortenFQNames
  * @property-read Variable[] $variables
  * @property-read string[]   $context
+ * @property-read string     $shortcut
  */
 class Template extends AbstractEntity
 {
@@ -30,5 +31,6 @@ class Template extends AbstractEntity
         'toShortenFQNames' => true,
         'variables'        => [],
         'context'          => [],
+        'shortcut'         => null,
     ];
 }
