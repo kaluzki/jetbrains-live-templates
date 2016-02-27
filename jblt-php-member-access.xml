@@ -316,4 +316,21 @@
       <option name="PHP String Literal" value="false" />
     </context>
   </template>
+  <template name="($SELECTION$)-&gt;$COMPLETE$" value="($SELECTION$)-&gt;$COMPLETE$" description="." toReformat="false" toShortenFQNames="true">
+    <variable name="COMPLETE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="n." value="$$n$C1$-&gt;$C2$" description="$n-&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="C1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="C2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
 </templateSet>
