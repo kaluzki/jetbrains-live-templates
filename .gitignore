@@ -9,4 +9,5 @@
 !console
 !src/
 !tests/
+!docs/
 !phpunit.xml.dist
