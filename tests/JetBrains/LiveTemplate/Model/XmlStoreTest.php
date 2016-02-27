@@ -21,7 +21,7 @@ class XmlStoreTest extends \PHPUnit_Framework_TestCase
 <templateSet group="test-group">
   <template name="t1-name" value="t1-value">
     <context>
-      <option name="PHP" value="true" />
+      <option name="PHP String Literal" value="true" />
       <option name="HTML" value="false" />
       <option name="OTHER" value="true" />
     </context>
@@ -50,7 +50,7 @@ XML;
                         'toShortenFQNames' => true,
                         'variables'        => [],
                         'context'          => [
-                            ContextEnum::PHP,
+                            ContextEnum::PHP_STRING,
                             ContextEnum::OTHER
                         ],
                         'shortcut'         => '',

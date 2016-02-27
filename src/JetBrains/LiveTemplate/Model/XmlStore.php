@@ -8,6 +8,7 @@
 
 namespace kaluzki\JetBrains\LiveTemplate\Model;
 use IteratorAggregate;
+use ReflectionClass;
 use SimpleXMLElement;
 
 /**
@@ -100,11 +101,15 @@ class XmlStore implements IteratorAggregate
      */
     protected function toContext(SimpleXMLElement $xml)
     {
+        static $supported = null;
+        if (!$supported) {
+            $supported = array_flip((new ReflectionClass(__NAMESPACE__ . '\ContextEnum'))->getConstants());
+        }
         $context = [];
         foreach ($xml->xpath('option') as $option) {
-            $constant = __NAMESPACE__ . "\\ContextEnum::{$option['name']}";
-            if ($this->attribute($option, 'value') == 'true' && constant($constant)) {
-                $context[] = $this->attribute($option, 'name');
+            $name = $this->attribute($option, 'name');
+            if (isset($supported[$name]) && $this->attribute($option, 'value') == 'true' ) {
+                $context[] = $name;
             }
         }
         return array_unique($context);
