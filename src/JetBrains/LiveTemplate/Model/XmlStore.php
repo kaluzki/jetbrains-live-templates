@@ -74,6 +74,7 @@ class XmlStore implements IteratorAggregate
             'variables'        => array_map([$this, 'toVariable'], $xml->xpath('variable')),
             'context'          => $this->toContext($xml->context),
             'shortcut'         => $this->attribute($xml, 'shortcut'),
+            'deactivated'      => $this->attribute($xml, 'toReformat') == 'true',
         ]);
     }
 
@@ -108,7 +109,6 @@ class XmlStore implements IteratorAggregate
         }
         return array_unique($context);
     }
-
 
     /**
      * @param SimpleXMLElement $xml

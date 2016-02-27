@@ -17,6 +17,7 @@ namespace kaluzki\JetBrains\LiveTemplate\Model;
  * @property-read Variable[] $variables
  * @property-read string[]   $context
  * @property-read string     $shortcut
+ * @property-read bool       $deactivated
  */
 class Template extends AbstractEntity
 {
@@ -32,5 +33,6 @@ class Template extends AbstractEntity
         'variables'        => [],
         'context'          => [],
         'shortcut'         => null,
+        'deactivated'      => false,
     ];
 }

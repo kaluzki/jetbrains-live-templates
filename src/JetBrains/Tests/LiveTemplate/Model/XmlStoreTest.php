@@ -30,7 +30,7 @@ class XmlStoreTest extends \PHPUnit_Framework_TestCase
       <option name="OTHER" value="true" />
     </context>
   </template>
-  <template name="t2-name" value="\$v1$&#10;&gt;\$v2$&lt;\$v3$&amp;\$v4$" description="t2-description" toReformat="true" toShortenFQNames="false">
+  <template name="t2-name" value="\$v1$&#10;&gt;\$v2$&lt;\$v3$&amp;\$v4$" description="t2-description" toReformat="true" toShortenFQNames="false" shortcut="ENTER" deactivated="true">
     <variable />
     <variable name="v2" />
     <variable name="v3" expression="exp" defaultValue="default" />
@@ -58,6 +58,7 @@ XML;
                             ContextEnum::OTHER
                         ],
                         'shortcut'         => '',
+                        'deactivated'      => false,
                     ],
                     [
                         'name'             => 't2-name',
@@ -92,7 +93,8 @@ XML;
                             ],
                         ],
                         'context'          => [],
-                        'shortcut'         => '',
+                        'shortcut'         => 'ENTER',
+                        'deactivated'      => true,
                     ],
                 ]],
                 'xml'      => $integration
