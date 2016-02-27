@@ -9,9 +9,11 @@
 namespace kaluzki\JetBrains\LiveTemplate\Console\Command;
 
 use kaluzki\JetBrains\LiveTemplate\Model\XmlStore;
+use kaluzki\JetBrains\LiveTemplate\View\MarkDown;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -25,8 +27,9 @@ class Convert extends Command
     {
         $this
             ->setName('jblt:convert')
-            ->setDescription('Convert xml to another format (json|md)')
-            ->addArgument('FILE', InputArgument::OPTIONAL | InputArgument::IS_ARRAY, 'file pattern', ['jblt-*.xml'])
+            ->setDescription('Convert xml to another format (json|markdown)')
+            ->addOption('format', 'f', InputOption::VALUE_REQUIRED, 'json|markdown', 'json')
+            ->addArgument('file', InputArgument::OPTIONAL | InputArgument::IS_ARRAY, 'file pattern', ['jblt-*.xml'])
         ;
     }
 
@@ -36,14 +39,25 @@ class Convert extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $files = [];
-        foreach ($input->getArgument('FILE') as $pattern) {
+        foreach ($input->getArgument('file') as $pattern) {
             $files = array_merge($files, glob($pattern));
         }
+        $format = $input->getOption('format');
 
-        array_map(function($file) use($output) {
+        array_map(function($file) use($output, $format) {
             $output->writeln($file);
-            $store = new XmlStore(simplexml_load_file($file));
-            $output->writeln(json_encode($store->getIterator()));
+            $templateSet = (new XmlStore(simplexml_load_file($file)))->getIterator();
+
+            switch ($format) {
+                case 'markdown':
+                case 'md':
+                    $content = (new MarkDown($templateSet))->render($templateSet);
+                    break;
+                default:
+                    $content = json_encode($templateSet, JSON_PRETTY_PRINT);
+            }
+
+            $output->writeln($content);
             $output->writeln('');
         }, array_unique($files));
     }
