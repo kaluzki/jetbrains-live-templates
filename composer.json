@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "kaluzki\\JetBrains\\": "src/JetBrains"
+            "kaluzki\\JetBrains\\": ["src/JetBrains", "tests/JetBrains"]
         }
     }
 }

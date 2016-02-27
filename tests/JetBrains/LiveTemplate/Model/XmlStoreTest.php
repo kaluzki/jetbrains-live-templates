@@ -6,11 +6,7 @@
  * file that was distributed with this source code.
  */
 
-namespace kaluzki\JetBrains\Tests\LiveTemplate\Model;
-use Exception;
-use kaluzki\JetBrains\LiveTemplate\Model\ContextEnum;
-use kaluzki\JetBrains\LiveTemplate\Model\XmlStore;
-use SimpleXMLElement;
+namespace kaluzki\JetBrains\LiveTemplate\Model;
 
 /**
  */
@@ -106,15 +102,15 @@ XML;
      * @dataProvider providerGetIterator
      * @covers       XmlStore::getIterator
      *
-     * @param Exception|array $expected
+     * @param \Exception|array $expected
      * @param string          $xml
      */
     public function testGetIterator($expected, $xml)
     {
-        if ($expected instanceof Exception) {
+        if ($expected instanceof \Exception) {
             $this->setExpectedException(get_class($expected), $expected->getMessage());
         }
-        $store     = new XmlStore(new SimpleXMLElement($xml));
+        $store     = new XmlStore(new \SimpleXMLElement($xml));
         $iterator  = $store->getIterator();
         $this->assertInstanceOf('kaluzki\JetBrains\LiveTemplate\Model\TemplateSet', $iterator);
         $this->assertEquals($expected, json_decode(json_encode($iterator), true));
