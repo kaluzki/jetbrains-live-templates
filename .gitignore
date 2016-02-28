@@ -5,9 +5,11 @@
 
 !jblt-*
 
+!LICENSE
 !composer.json
+!phpunit.xml.dist
 !console
+
 !src/
 !tests/
 !docs/
-!phpunit.xml.dist
