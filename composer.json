@@ -11,14 +11,15 @@
         }
     ],
     "require": {
-        "symfony/console": "^2.8"
+        "symfony/console": "^2.8",
+        "symfony/routing": "^2.8"
     },
     "require-dev": {
         "phpunit/PHPUnit": "^3.7"
     },
     "autoload": {
         "psr-4": {
-            "kaluzki\\JetBrains\\": ["src/JetBrains", "tests/JetBrains"]
+            "kaluzki\\": ["src", "tests"]
         }
     }
 }
