@@ -97,7 +97,7 @@ class MarkDown
      *
      * @return string
      */
-    protected function renderTemplate(Template $template)
+    public function renderTemplate(Template $template)
     {
         return $this->lines(
             implode(' ', [
@@ -122,7 +122,7 @@ class MarkDown
      *
      * @return string
      */
-    protected function renderVariable(Variable $variable)
+    public function renderVariable(Variable $variable)
     {
         return implode(' ', [
             '-',

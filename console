@@ -11,6 +11,7 @@ require __DIR__.'/vendor/autoload.php';
 
 $app = new Symfony\Component\Console\Application();
 $app->addCommands([
-    new kaluzki\JetBrains\LiveTemplate\Console\Command\Convert()
+    new kaluzki\JetBrains\LiveTemplate\Console\Command\Convert(),
+    new kaluzki\JetBrains\LiveTemplate\Console\Command\Api()
 ]);
 $app->run();
