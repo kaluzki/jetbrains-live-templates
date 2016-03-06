@@ -9,6 +9,7 @@
 !composer.json
 !phpunit.xml.dist
 !console
+!.travis.yml
 
 !src/
 !tests/

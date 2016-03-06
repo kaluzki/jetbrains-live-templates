@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kaluzki/jetbrains-live-templates.svg?branch=develop)](https://travis-ci.org/kaluzki/jetbrains-live-templates)
+
 # Live templates for JetBrains editors.
 
 ## Installation
