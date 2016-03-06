@@ -23,7 +23,7 @@ class Router
     protected $collection;
 
     /**
-     * @param \Closure[]|\Traversable $services Callable services indexed by a route
+     * @param \Closure[]|Service[]|\Traversable $services Callable services indexed by a route
      *
      * @throws Routing\Exception\InvalidParameterException
      */
@@ -33,14 +33,24 @@ class Router
         if (!is_array($services) && !$services instanceof \Traversable) {
             throw new Routing\Exception\InvalidParameterException('Parameter $services is not traversable');
         }
-        foreach ($services as $locator  => $service) {
+        foreach ($services as $locator => $service) {
             if (!is_callable($service)) {
                 throw new Routing\Exception\InvalidParameterException("service '{$locator}' is not callable");
             }
+
+            $service = $service instanceof Service ? $service : new Service($service);
             list($methods, $path) = explode(' ', $locator, 2);
+
             foreach (explode('|', $methods) as $method) {
-                $route = new Routing\Route($path, ['_service' => $service,]);
-                $route->setMethods($method);
+                $route = new Routing\Route(
+                    $path,
+                    array_merge(['_service' => $service], $service->defaults),
+                    $service->requirements,
+                    $service->options,
+                    $service->host,
+                    $service->schemes,
+                    $method
+                );
                 $this->collection->add("$method $path", $route);
             }
         }
@@ -59,11 +69,11 @@ class Router
      */
     public function __invoke($method, $path)
     {
-        $matcher = new Routing\Matcher\UrlMatcher($this->collection, new Routing\RequestContext());
+        $matcher = new Routing\Matcher\UrlMatcher($this->collection, new Routing\RequestContext('', $method));
         $params  = $matcher->match($path);
-        $service = $params['_service'];
-        unset($params['_service']);
-        unset($params['_route']);
-        return call_user_func_array($service, $params + [strtoupper($method)]);
+        /** @var Service $service */
+        $service          = $params['_service'];
+        $params['_route'] = $this->collection->get($params['_route']);
+        return $service->invokeWithParams($params);
     }
 }

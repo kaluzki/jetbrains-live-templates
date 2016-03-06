@@ -45,15 +45,23 @@ class RouterTest extends \PHPUnit_Framework_TestCase
                 'method'   => 'GET',
                 'path'     => '/',
             ],
-            'method is passed as last argument => GET' => [
-                'expected' => ['first', 'second', 'GET'],
-                'services' => ['get|post|delete|put /{bar}/{foo}' => function() {return func_get_args();}],
+            '$_route is also passed to the service => GET' => [
+                'expected' => ['first', 'second', ['GET']],
+                'services' => [
+                    'get|post|delete|put /{bar}/{foo}' => function($foo, Routing\Route $_route, $bar) {
+                        return [$bar, $foo, $_route->getMethods()];
+                    }
+                ],
                 'method'   => 'GET',
                 'path'     => '/first/second',
             ],
-            'method is passed as last argument => DELETE' => [
-                'expected' => ['first', 'second', 'DELETE'],
-                'services' => ['get|post|delete|put /{bar}/{foo}' => function() {return func_get_args();}],
+            '$_route is also passed to the service => DELETE' => [
+                'expected' => ['first', 'second', ['DELETE']],
+                'services' => [
+                    'get|post|delete|put /{bar}/{foo}' => function(Routing\Route $_route, $foo, $bar) {
+                        return [$bar, $foo, $_route->getMethods()];
+                    }
+                ],
                 'method'   => 'DELETE',
                 'path'     => '/first/second',
             ],
