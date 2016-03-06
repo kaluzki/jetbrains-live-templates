@@ -1,9 +1,20 @@
-sudo: false
-
 language: php
+
 php:
   - 5.4
   - 5.5
-script: phpunit
 
-before_script: composer install
+sudo: false
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
+
+
+before_script:
+  - composer self-update
+  - composer install --prefer-dist --no-interaction
+
+script:
+  - phpunit
